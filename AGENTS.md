@@ -4,7 +4,7 @@
 
 Every time this app is edited or updated, also reflect the finished changes in its GitHub repository. The requested destination is the public repository `https://github.com/koukasei86/hitoami` (branch `main`), explicitly authorized by the user. Check `GITHUB.md` for the verified destination and setup status; do not claim synchronization succeeded until GitHub confirms it.
 
-- Preserve the existing Sites project ID and its private audience. Use the Sites skill for app edits and deployments.
+- Preserve the existing Sites project ID and its public audience (explicitly authorized by the user). Use the Sites skill for app edits and deployments.
 - After relevant checks pass, save the same finished application source and assets to GitHub, including documentation and this instruction file.
 - Use the GitHub connector when no authenticated Git CLI is available. Read the current remote branch before updating. Preserve unrelated remote changes; do not force push.
 - Do not replace the Sites source repository with GitHub. They are separate destinations.
