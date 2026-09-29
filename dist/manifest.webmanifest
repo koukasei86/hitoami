@@ -1,0 +1,13 @@
+{
+  "name": "ひとあみ",
+  "short_name": "ひとあみ",
+  "description": "初心者のための編み物制作ノート",
+  "start_url": "./#home",
+  "display": "standalone",
+  "background_color": "#f3f2ec",
+  "theme_color": "#18252a",
+  "icons": [
+    {"src": "assets/app-icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "assets/app-icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
