@@ -5,7 +5,7 @@ export async function analyzePhoto({imageData,templateId='lamp',dimensions={}}, 
  if(typeof imageData!=='string'||!imageData.startsWith('data:image/'))throw new Error('画像を追加してください。');
  if(adapter)return adapter({imageData,templateId,dimensions});
  const template=projects.find(p=>p.id===templateId);if(!template)throw new Error('サンプルを選択してください。');
- return {mode:'mock',templateId,dimensions,features:templateId==='lamp'?['円筒形のカバー','すき間のある透かし模様','かぎ針編みを想定']:['平らな編み地','かぎ針編みを想定'],candidates:template.techniques.filter(id=>!['chain','finish','slip'].includes(id)),recommended:templateId==='lamp'?'filet':template.techniques[1],reason:templateId==='lamp'?'方眼編みはマスの数を確認しやすく、長編みと鎖編みの繰り返しを練習できるためです。':'同じ編み方を繰り返す構成で、目数と幅を確かめながら進めやすいためです。',notice:'サンプル結果です。写真の内容は解析していません。選んだ練習作品のデータを表示しています。',uncertainty:'写真だけでは針の号数、糸の太さ、目数、段数、内部構造は確定できません。'};
+ return {mode:'mock',templateId,dimensions,features:templateId==='mesh-art'?['網目の土台に刺す','毛糸で平らな絵柄を作る']:templateId==='sweater'?['身頃と袖をつなぐ','かぎ針編みを想定','サイズに合う編み図が必要']:templateId==='lamp'?['円筒形のカバー','すき間のある透かし模様','かぎ針編みを想定']:['平らな編み地','かぎ針編みを想定'],candidates:template.techniques.filter(id=>!['chain','finish','slip'].includes(id)),recommended:templateId==='lamp'?'filet':template.techniques[1],reason:templateId==='mesh-art'?'ひとマスに斜めの一針を刺す方法で、図案の位置と色を確かめながら進められるためです。':templateId==='sweater'?'中長編みでまずゲージの練習をします。本体の編み方と目数は、選んだセーターの編み図に従ってください。':templateId==='lamp'?'方眼編みはマスの数を確認しやすく、長編みと鎖編みの繰り返しを練習できるためです。':'同じ編み方を繰り返す構成で、目数と幅を確かめながら進めやすいためです。',notice:'サンプル結果です。写真の内容は解析していません。選んだ練習作品のデータを表示しています。',uncertainty:'写真だけでは針の号数、糸の太さ、目数、段数、内部構造は確定できません。'};
 }
 export async function prepareImage(file){
  if(!file||!['image/jpeg','image/png','image/webp'].includes(file.type))throw new Error('JPEG・PNG・WebPの画像を選んでください。HEICはJPEGに変換してください。');

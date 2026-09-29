@@ -38,3 +38,10 @@ button,a,label[for=photo]{touch-action:manipulation}
  body[data-route=step] #toast{bottom:calc(120px + var(--safe-bottom))}body[data-route=project] #toast{bottom:calc(185px + var(--safe-bottom))}
  @media(max-height:500px){.dock-caption,.project-dock>span{display:none}.mobile-dock{padding-top:6px;padding-bottom:calc(6px + var(--safe-bottom))}.project-dock{bottom:calc(var(--nav-height) + var(--safe-bottom))}}
 }
+
+/* Keep the full item visible when choosing a project on a phone. */
+.card .card-image{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.detail-head .card-image{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;border-radius:18px;background:#eee9df}
+.method-note{font-size:14px;line-height:1.8;color:var(--muted)}
+
+#main:focus{outline:none}
